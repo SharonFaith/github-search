@@ -32,6 +32,7 @@ export class GithubSearchComponent implements OnInit {
   userInfo(userValue) {
     console.log(userValue);
     this.userRepositories = []
+    this.repo = []
 
     if(userValue !== '') {
       let promise = new Promise((resolve, reject)=> {
