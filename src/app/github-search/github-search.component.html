@@ -1,18 +1,18 @@
-<h1></h1>
-<hr>
-<hr>
-<h8>To go back to the landing page click <button (click)="backUrl()">here</button></h8>
-<hr>
-<h5 style="text-align: center;">Search for either a github username or a github repository:</h5>
-<hr>
-<hr>
-<div class="container">
-    <div class="container-fluid">
+
+<div class="container-fluid">
+    
+    
+    <h6 style="font-weight: bold; color: white; text-align: center;">To go back to the landing page click <button (click)="backUrl()" class="btn btn-light">here</button></h6>
+    <hr>
+    <h5 style="text-align: center; font-weight: bold; color: thistle;">Search for either a github username or a github repository:</h5>
+    <hr>
+    <hr>
+
         <div class="row">
             <div class="col-md-5">
                 <form #userForm = 'ngForm'>
                     <div class="form-group">
-                        <label for="username" style="text-align: center;">Github username</label>
+                        <label for="username" style="text-align: center; font-size: larger; font-weight: bold; color: thistle;">Github username</label>
                         <input type="text" required class="form-control" id="username" name="username" [(ngModel)] = "userName.value" >
                         {{userName.value}}
                         <!--<div [hidden]="name.valid || name.pristine" class="alert alert-danger" >
@@ -28,12 +28,12 @@
             
             <div class="col-md-2" style="text-align: center;">
                 
-                <p>OR</p>
+                <p style="font-weight: bold; color: thistle;">OR</p>
             </div>
             <div class="col-md-5">
                 <form #repoForm = 'ngForm'>
                     <div class="form-group">
-                        <label for="repo" style="text-align: center;">Github repository</label>
+                        <label for="repo" style="text-align: center; font-size: larger; font-weight: bold; color: thistle;">Github repository</label>
                         <input type="text" required class="form-control" id="reponame" name="reponame" [(ngModel)] = "repoName.value">
                         {{repoName.value}}
                         <!--<div [hidden]="name.valid || name.pristine" class="alert alert-danger" >
@@ -100,6 +100,6 @@
         </div>     
                
         
-    </div>
+    
 </div>
 
