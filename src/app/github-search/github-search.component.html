@@ -1,1 +1,85 @@
-<p>github-search works!</p>
+<h1></h1>
+<hr>
+<hr>
+<h5>To go back to the landing page click <button (click)="backUrl()">here</button></h5>
+<hr>
+<div class="container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5">
+                <form #userForm = 'ngForm'>
+                    <div class="form-group">
+                        <label for="username" style="text-align: center;">Github username</label>
+                        <input type="text" required class="form-control" id="username" name="username" [(ngModel)] = "userName.value" >
+                        {{userName.value}}
+                        <!--<div [hidden]="name.valid || name.pristine" class="alert alert-danger" >
+                          <p>Name is required</p>
+                  
+                        </div>-->
+                    </div>
+                    <button class="btn btn-secondary" type="submit" (click) = 'userInfo(userName.value); showButton()'>Submit</button>
+                </form>
+            </div>
+            
+            
+            
+            <div class="col-md-2" style="text-align: center;">
+                
+                <p>OR</p>
+            </div>
+            <div class="col-md-5">
+                <form #repoForm = 'ngForm'>
+                    <div class="form-group">
+                        <label for="repo" style="text-align: center;">Github repository</label>
+                        <input type="text" required class="form-control" id="reponame" name="reponame" [(ngModel)] = "repoName.value">
+                        {{repoName.value}}
+                        <!--<div [hidden]="name.valid || name.pristine" class="alert alert-danger" >
+                          <p>Name is required</p>
+                  
+                        </div>-->
+                    </div>
+                    
+                    <button class="btn btn-secondary" type="submit" (click) = 'repoInfo(repoName.value)'>Submit</button>
+                </form>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div *ngFor= 'let rep of repo'>
+                <p>name: {{rep.repoName}}</p>
+                <p>description: {{rep.repoDescription}}</p>
+                
+                <p>date made: {{rep.repoMade|date}}</p>
+                <p>days since repo was made: {{rep.repoMade|countDays}}</p>
+                <p>url: {{rep.repoUrl}}</p>
+                <a href="{{rep.repoUrl}}">link to repo in github</a>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <img src="{{user['profilePic']}}" alt="">
+                <p>{{user['userName']}}</p>
+               <!-- <p>{{user['repos']}}</p>-->
+                <div *ngIf='buttonShow'> 
+                    <button (click)="getUserRepo(userName.value)">click to show {{user.userName}}'s repositories.</button>
+                    <p>Their repositories are:</p>
+                </div>
+                
+                    
+                    <div *ngIf='edited'>
+                        
+                        <div *ngFor='let userRepo of userRepositories' id="userRepos">
+                            <p appCaseBold>{{userRepo.repoName}}</p>
+                            <p>{{userRepo.repoDescription}}</p>
+                            
+                            <a href="{{userRepo.repoURL}}">link to repo in github</a>
+                        </div>
+                    </div> 
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
