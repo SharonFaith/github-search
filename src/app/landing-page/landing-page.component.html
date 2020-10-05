@@ -1,1 +1,24 @@
-<p>landing-page works!</p>
+<hr>
+<h5>Welcome to Github Search App! To search for a github username or repository, click <button (click)=goUrl()>here</button></h5>
+<div class="row">
+
+    <div class="col-md-12">
+        <img src="{{user['profilePic']}}" alt="">
+        <p>Username: {{user['userName']}}</p>
+        <!--<p>{{user['repos']}}</p>-->
+        <!--<div >
+            <app-user-repos></app-user-repos>
+        </div>-->
+            <p>The repositories include: </p>
+            <div *ngIf='edited'>
+                <div *ngFor='let userRepo of userRepositories' id="userRepos">
+                    <p appCaseBold>{{userRepo.repoName}}</p>
+                    <p>{{userRepo.repoDescription}}</p>
+                    
+                    <a href="{{userRepo.repoURL}}">link to repo in github</a>
+                </div>
+            </div>
+            
+        
+    </div>
+</div>
