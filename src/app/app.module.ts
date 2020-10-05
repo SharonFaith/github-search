@@ -9,6 +9,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { GithubSearchComponent } from './github-search/github-search.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { CountDaysPipe } from './count-days.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     LandingPageComponent,
     GithubSearchComponent,
     NavbarComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    CountDaysPipe
   ],
   imports: [
     BrowserModule,
