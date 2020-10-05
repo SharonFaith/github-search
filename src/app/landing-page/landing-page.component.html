@@ -1,24 +1,42 @@
-<hr>
-<h5>Welcome to Github Search App! To search for a github username or repository, click <button (click)=goUrl()>here</button></h5>
-<div class="row">
-
-    <div class="col-md-12">
-        <img src="{{user['profilePic']}}" alt="">
-        <p>Username: {{user['userName']}}</p>
-        <!--<p>{{user['repos']}}</p>-->
-        <!--<div >
-            <app-user-repos></app-user-repos>
-        </div>-->
-            <p>The repositories include: </p>
-            <div *ngIf='edited'>
-                <div *ngFor='let userRepo of userRepositories' id="userRepos">
-                    <p appCaseBold>{{userRepo.repoName}}</p>
-                    <p>{{userRepo.repoDescription}}</p>
-                    
-                    <a href="{{userRepo.repoURL}}">link to repo in github</a>
+<div class="container">
+    <hr>
+    <h5 style="text-align: center;">Welcome to Github Search App! To search for a github username or repository, click <button (click)=goUrl()>here</button></h5>
+    <hr>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6"> 
+            <div class="card"> 
+                <div class="card-body" style="text-align: center;">
+                    <img class="card-img-body" src="{{user['profilePic']}}" style="height: 10%; width: 10%"alt="">
+                    <p class="card-footer">Username: {{user['userName']}}</p>
                 </div>
             </div>
-            
-        
+        </div>
+
     </div>
+            <!--<p>{{user['repos']}}</p>-->
+            <!--<div >
+                <app-user-repos></app-user-repos>
+            </div>-->
+                <hr>
+                <p style="text-align: center;">The repositories include: </p>
+                <hr>
+                <div class="row" *ngIf='edited'>
+                    <div *ngFor='let userRepo of userRepositories' id="userRepos" class="col-md-6">
+                        <div class="card"> 
+                            <p class="card-header"appCaseBold style="text-align: center;">{{userRepo.repoName}}</p>
+                            <div class="card-body" style="text-align: center;">
+                                <p>{{userRepo.repoDescription}}</p>
+                                
+                                <a href="{{userRepo.repoURL}}">link to repo in github</a>
+                            </div>
+                        </div>
+                        
+                        <p></p>
+                        
+                        
+                    </div>
+                </div>     
+        
+    
 </div>
