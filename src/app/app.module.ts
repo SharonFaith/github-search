@@ -10,6 +10,7 @@ import { GithubSearchComponent } from './github-search/github-search.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CountDaysPipe } from './count-days.pipe';
+import { CaseBoldDirective } from './case-bold.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CountDaysPipe } from './count-days.pipe';
     GithubSearchComponent,
     NavbarComponent,
     NotFoundComponent,
-    CountDaysPipe
+    CountDaysPipe,
+    CaseBoldDirective
   ],
   imports: [
     BrowserModule,
